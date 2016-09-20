@@ -65,11 +65,11 @@ namespace SpecFlow.Exploration.Tests.AddNumbers
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Add two numbers")]
-        [NUnit.Framework.TestCaseAttribute("17", "25", "42", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("10", "78", "88", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("2", "25", "27", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("5", "-17", "-12", new string[0])]
-        public virtual void AddTwoNumbers(string first, string second, string result, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("17_25", "17", "25", "42", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("10_78", "10", "78", "88", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("2_25", "2", "25", "27", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("5_minus12", "5", "-17", "-12", new string[0])]
+        public virtual void AddTwoNumbers(string description, string first, string second, string result, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", exampleTags);
 #line 5
@@ -79,6 +79,25 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.When(string.Format("I add {0} to {1}", first, second), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 8
+ testRunner.Then(string.Format("the result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Sub two numbers")]
+        [NUnit.Framework.TestCaseAttribute("17_59", "17", "59", "-42", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("10_3", "10", "3", "7", new string[0])]
+        public virtual void SubTwoNumbers(string description, string first, string second, string result, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Sub two numbers", exampleTags);
+#line 17
+this.ScenarioSetup(scenarioInfo);
+#line 18
+ testRunner.Given("I have a Calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+ testRunner.When(string.Format("I subtract {0} to {1}", first, second), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 20
  testRunner.Then(string.Format("the result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

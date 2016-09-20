@@ -49,6 +49,7 @@
     <Content Include="SpecRunTestProfile_2011_09.xsd">
       <Paket>True</Paket>
     </Content>
+    <Compile Include="AddNumbers\CalculatorSteps.cs" />
     <Compile Include="Add\Calculator.Add.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -59,7 +60,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Calculator.feature</DependentUpon>
     </Compile>
-    <Compile Include="AddNumbers\CalculatorAddNumbersSteps.cs" />
     <Compile Include="Add\CalculatorSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

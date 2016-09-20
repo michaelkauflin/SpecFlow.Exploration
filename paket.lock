@@ -1,9 +1,9 @@
 NUGET
-  remote: https://artifacts.sonova.com/artifactory/api/nuget/components-production
+  remote: https://www.nuget.org/api/v2
     Autofac (3.5.2)
-    CommandLineParser (1.9.71)
     Moq (4.2.1507.0118)
     NUnit (2.6.0.12054)
+    SpecFlow (2.1)
     System.IO.Abstractions (2.0.0.124)
     System.IO.Abstractions.TestingHelpers (2.0.0.124)
       System.IO.Abstractions

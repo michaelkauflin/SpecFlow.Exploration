@@ -7,7 +7,7 @@
     <ProjectGuid>{C9953C50-34A2-4E76-A622-86B97CD9B723}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Calculator.Tests</RootNamespace>
+    <RootNamespace>SpecFlow.Exploration.Tests</RootNamespace>
     <AssemblyName>Calculator.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -43,9 +43,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SpecRunTestProfile.xsd">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="SpecRunTestProfile_2011_09.xsd">
+      <Paket>True</Paket>
+    </Content>
+    <Compile Include="Add\Calculator.Add.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Calculator.Add.feature</DependentUpon>
+    </Compile>
+    <Compile Include="AddNumbers\Calculator.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Calculator.feature</DependentUpon>
+    </Compile>
+    <Compile Include="AddNumbers\CalculatorAddNumbersSteps.cs" />
+    <Compile Include="Add\CalculatorSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Add\Calculator.Add.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Calculator.Add.feature.cs</LastGenOutput>
+    </None>
+    <None Include="AddNumbers\Calculator.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Calculator.feature.cs</LastGenOutput>
+    </None>
     <None Include="paket.references" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -56,6 +82,12 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <ProjectReference Include="..\Calculator\Calculator.csproj">
+      <Project>{5F71F143-75E6-44C5-A987-B984F2A4B409}</Project>
+      <Name>Calculator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
@@ -97,6 +129,22 @@
       <ItemGroup>
         <Reference Include="TechTalk.SpecFlow">
           <HintPath>..\..\packages\SpecFlow\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="SpecRun.SpecFlowPlugin">
+          <HintPath>..\..\packages\SpecRun.SpecFlow\lib\net45\SpecRun.SpecFlowPlugin.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="TechTalk.SpecRun">
+          <HintPath>..\..\packages\SpecRun.SpecFlow\lib\net45\TechTalk.SpecRun.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>

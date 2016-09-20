@@ -2,6 +2,9 @@ source https://www.nuget.org/api/v2
 
 nuget Autofac
 nuget SpecFlow
+nuget SpecFlow.NUnit
+nuget SpecFlow.NUnit.Runners
+nuget SpecRun.SpecFlow
 nuget Nunit
 nuget Moq
 nuget System.IO.Abstractions

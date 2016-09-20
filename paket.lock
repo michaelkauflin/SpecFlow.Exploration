@@ -4,6 +4,16 @@ NUGET
     Moq (4.2.1507.0118)
     NUnit (2.6.0.12054)
     SpecFlow (2.1)
+    SpecFlow.NUnit (1.1.1)
+      NUnit (>= 2.6)
+      SpecFlow
+    SpecFlow.NUnit.Runners (1.0)
+      NUnit.Runners
+      SpecFlow.NUnit (>= 1.1)
+    SpecRun.Runner (1.5.2)
+    SpecRun.SpecFlow (1.5.2)
+      SpecFlow (>= 2.1)
+      SpecRun.Runner (>= 1.5.2)
     System.IO.Abstractions (2.0.0.124)
     System.IO.Abstractions.TestingHelpers (2.0.0.124)
       System.IO.Abstractions
